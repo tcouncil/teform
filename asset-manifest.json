@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/teform/static/css/main.073c9b0a.css",
+    "main.js": "/teform/static/js/main.d1168b23.js",
+    "static/js/787.48e1f5c9.chunk.js": "/teform/static/js/787.48e1f5c9.chunk.js",
+    "index.html": "/teform/index.html",
+    "main.073c9b0a.css.map": "/teform/static/css/main.073c9b0a.css.map",
+    "main.d1168b23.js.map": "/teform/static/js/main.d1168b23.js.map",
+    "787.48e1f5c9.chunk.js.map": "/teform/static/js/787.48e1f5c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d1168b23.js"
+  ]
+}
