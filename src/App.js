@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 function App() {
 
   let teInput = '';
-  let teAnswer = '';
+  const [verbsUsed, setVerbUsed] = React.useState([]);
+  const [verbIndex, setVerbIndex] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [correct, setCorrect] = React.useState(0);
   const [verb, setVerb] = React.useState('');
@@ -13,8 +14,6 @@ function App() {
   const [definition, setDefinition] = React.useState('');
   const [teConjugation, setTeConjugation] = React.useState('');
   const [verbType, setVerbType] = React.useState('');
-
-
 
   const verbs = [
     // Chapter 3 Verbs
@@ -163,11 +162,66 @@ function App() {
       definition: 'to buy (~を)',
       teConjugation: 'う → って'
     },
-  ];
+    {
+      verb: 'かく',
+      verbType: 'u',
+      teForm: 'かいて',
+      kanjiForm: '書く',
+      kanjiTeForm: '書いて',
+      definition: 'to write (person に thing を)',
+      teConjugation: 'く → いて'
+    },
+    {
+      verb: 'とる',
+      verbType: 'u',
+      teForm: 'とって',
+      kanjiForm: '撮る',
+      kanjiTeForm: '撮って',
+      definition: 'to take(a picture) (~を)',
+      teConjugation: 'る → って'
+    },
+    {
+      verb: 'まつ',
+      verbType: 'u',
+      teForm: 'まって',
+      kanjiForm: '待つ',
+      kanjiTeForm: '待って',
+      definition: 'to wait (~を)',
+      teConjugation: 'つ → って'
+    }, {
+      verb: 'わかる',
+      verbType: 'u',
+      teForm: 'わかって',
+      kanjiForm: 'わかる',
+      kanjiTeForm: 'わかって',
+      definition: 'to understand (~が)',
+      teConjugation: 'る → って'
+    }, {
+      verb: 'いる',
+      verbType: 'ru',
+      teForm: 'いて',
+      kanjiForm: 'いる',
+      kanjiTeForm: 'いて',
+      definition: '(a person) is in...; stays at... (place に person が)',
+      teConjugation: 'る → て'
+    },
+  ]
 
   const drawVerb = () => {
-    const i = Math.floor(Math.random() * verbs.length);
+    let i = Math.floor(Math.random() * verbs.length);
 
+    if (verbsUsed.length === verbs.length) {
+      verbsUsed.length = 0;
+    }
+
+    if (verbsUsed.includes(i)) {
+      while (verbsUsed.includes(i)) {
+        i = Math.floor(Math.random() * verbs.length);
+      }
+
+    }
+
+    setVerbIndex(i);
     setVerb(verbs[i].verb);
     setVerbKanji(verbs[i].kanjiForm);
     setAnswer(verbs[i].teForm);
@@ -186,12 +240,13 @@ function App() {
     setCount(count + 1);
     if (teInput === answer || teInput === kanjiAnswer) {
       setCorrect(correct + 1);
+
+      verbsUsed.push(verbIndex);
       document.getElementById('teAnswer').innerText = `Correct!\n\nLast verb: ${verb} → ${answer}\n${teConjugation}\n${verbType}-type verb`;
       drawVerb();
       document.getElementById('teInput').value = '';
     } else {
       document.getElementById('teAnswer').innerText = `I'm sorry that isn't quite right, try again!\n\n${verbType}-type verb`;
-      console.log(teInput);
     }
   }
 
@@ -203,15 +258,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>て form conjugation quiz</h1>
+        <p className='instruction'>Enter the て form for the verb</p>
         <div>
-          <h1>て form conjugation quiz
-          </h1>
-          <p>Enter the て form for the verb</p>
+
           <div className="verbCard">
-            <p>
+            <p className='furigana'>
               <small>{verb}</small><br />
             </p>
-            <h2><b>{verbKanji}</b></h2>
+            <h2>{verbKanji}</h2>
             <h6><i>{definition}</i></h6>
           </div>
 
@@ -220,9 +275,10 @@ function App() {
             <button className='btn btn-primary' type='submit' onClick={checkForm}>Check</button>
           </form>
         </div>
-        <div>
-          <h6>{correct} / {count}</h6>
-          <h5 id='teAnswer'></h5>
+
+        <h6>{correct} / {count}</h6>
+        <div className='answerCard'>
+          <h5 id='teAnswer'> </h5>
         </div>
       </header>
     </div>
