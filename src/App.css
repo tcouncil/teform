@@ -34,6 +34,10 @@
   margin-bottom: 7vh;
 }
 
+.App-header h2 {
+  text-shadow: black 3px 1px;
+}
+
 .App-link {
   color: #61dafb;
 }

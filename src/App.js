@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 function App() {
 
   let teInput = '';
-  const [verbsUsed, setVerbUsed] = React.useState([]);
+  const [verbsUsed] = React.useState([]);
   const [verbIndex, setVerbIndex] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [correct, setCorrect] = React.useState(0);
@@ -205,6 +205,269 @@ function App() {
       definition: '(a person) is in...; stays at... (place に person が)',
       teConjugation: 'る → て'
     },
+    // Chapter 5 Verbs
+    {
+      verb: 'およぐ',
+      verbType: 'u',
+      teForm: 'およいで',
+      kanjiForm: '泳ぐ',
+      kanjiTeForm: '泳いで',
+      definition: 'to swim',
+      teConjugation: 'ぐ → いで'
+    },
+    {
+      verb: 'きく',
+      verbType: 'u',
+      teForm: 'きいて',
+      kanjiForm: '聞く',
+      kanjiTeForm: '聞いて',
+      definition: 'to ask (person に)',
+      teConjugation: 'く → いて'
+    },
+    {
+      verb: 'のる',
+      verbType: 'u',
+      teForm: 'のって',
+      kanjiForm: '乗る',
+      kanjiTeForm: '乗って',
+      definition: 'to ride; to board (~に)',
+      teConjugation: 'る → って'
+    },
+    {
+      verb: 'やる',
+      verbType: 'u',
+      teForm: 'やって',
+      kanjiForm: 'やる',
+      kanjiTeForm: 'やって',
+      definition: 'to do; to perform (~を)',
+      teConjugation: 'る → って'
+    },
+    {
+      verb: 'でかける',
+      verbType: 'ru',
+      teForm: 'でかけて',
+      kanjiForm: '出かける',
+      kanjiTeForm: '出かけて',
+      definition: 'to go out',
+      teConjugation: 'る → て'
+    },
+    // Chapter 6 Verbs
+    {
+      verb: 'あそぶ',
+      verbType: 'u',
+      teForm: 'あそんで',
+      kanjiForm: '遊ぶ',
+      kanjiTeForm: '遊んで',
+      definition: 'to play; to spend time pleasantly',
+      teConjugation: 'ぶ → んで'
+    },
+    {
+      verb: 'いそぐ',
+      verbType: 'u',
+      teForm: 'いそいで',
+      kanjiForm: '急ぐ',
+      kanjiTeForm: '急いで',
+      definition: 'to hurry',
+      teConjugation: 'ぐ → いで'
+    },
+    {
+      verb: 'かえす',
+      verbType: 'u',
+      teForm: 'かえして',
+      kanjiForm: '返す',
+      kanjiTeForm: '返して',
+      definition: 'to return (a thing) (person に thing を)',
+      teConjugation: 'す → して'
+    },
+    {
+      verb: 'けす',
+      verbType: 'u',
+      teForm: 'けして',
+      kanjiForm: '消す',
+      kanjiTeForm: '消して',
+      definition: 'to turn off; to erase (~を)',
+      teConjugation: 'す → して'
+    },
+    {
+      verb: 'しぬ',
+      verbType: 'u',
+      teForm: 'しんで',
+      kanjiForm: '死ぬ',
+      kanjiTeForm: '死んで',
+      definition: 'to die',
+      teConjugation: 'ぬ → んで'
+    },
+    {
+      verb: 'すわる',
+      verbType: 'u',
+      teForm: 'すわって',
+      kanjiForm: '座る',
+      kanjiTeForm: '座って',
+      definition: 'to sit down (seat に)',
+      teConjugation: 'る → って'
+    },
+    {
+      verb: 'たつ',
+      verbType: 'u',
+      teForm: 'たって',
+      kanjiForm: '立つ',
+      kanjiTeForm: '立って',
+      definition: 'to stand up',
+      teConjugation: 'つ → って'
+    },
+    {
+      verb: 'たばこをすう',
+      verbType: 'u',
+      teForm: 'たばこをすって',
+      kanjiForm: 'たばこを吸う',
+      kanjiTeForm: 'たばこを吸って',
+      definition: 'to smoke',
+      teConjugation: 'う → って'
+    },
+    {
+      verb: 'つかう',
+      verbType: 'u',
+      teForm: 'つかって',
+      kanjiForm: '使う',
+      kanjiTeForm: '使って',
+      definition: 'to use (~を)',
+      teConjugation: 'う → って'
+    },
+    {
+      verb: 'てつだう',
+      verbType: 'u',
+      teForm: 'てつだって',
+      kanjiForm: '手伝う',
+      kanjiTeForm: '手伝って',
+      definition: 'to help (person/task を)',
+      teConjugation: 'う → って'
+    },
+    {
+      verb: 'はいる',
+      verbType: 'u',
+      teForm: 'はいって',
+      kanjiForm: '入る',
+      kanjiTeForm: '入って',
+      definition: 'to enter (~に)',
+      teConjugation: 'る → って'
+    },
+    {
+      verb: 'もつ',
+      verbType: 'u',
+      teForm: 'もって',
+      kanjiForm: '持つ',
+      kanjiTeForm: '持って',
+      definition: 'to carry; to hold (~を)',
+      teConjugation: 'つ → って'
+    },
+    {
+      verb: 'やすむ',
+      verbType: 'u',
+      teForm: 'やすんで',
+      kanjiForm: '休む',
+      kanjiTeForm: '休んで',
+      definition: 'to be absent(from...) (~を); to rest',
+      teConjugation: 'む → んで'
+    },
+    {
+      verb: 'あける',
+      verbType: 'ru',
+      teForm: 'あけて',
+      kanjiForm: '開ける',
+      kanjiTeForm: '開けて',
+      definition: 'to open (something) (~を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'しめる',
+      verbType: 'ru',
+      teForm: 'しめて',
+      kanjiForm: '閉める',
+      kanjiTeForm: '閉めて',
+      definition: 'to close (something) (~を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'おしえる',
+      verbType: 'ru',
+      teForm: 'おしえて',
+      kanjiForm: '教える',
+      kanjiTeForm: '教えて',
+      definition: 'to teach; to instruct (person に thing を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'わすれる',
+      verbType: 'ru',
+      teForm: 'わすれて',
+      kanjiForm: '忘れる',
+      kanjiTeForm: '忘れて',
+      definition: 'to forget; to leave behind (~を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'おりる',
+      verbType: 'ru',
+      teForm: 'おりて',
+      kanjiForm: '降りる',
+      kanjiTeForm: '降りて',
+      definition: 'to get off (~を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'かりる',
+      verbType: 'ru',
+      teForm: 'かりて',
+      kanjiForm: '借りる',
+      kanjiTeForm: 'て',
+      definition: 'to borrow (person に thing を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'シャワーをあびる',
+      verbType: 'ru',
+      teForm: 'シャワーをあびて',
+      kanjiForm: 'シャワーを浴びる',
+      kanjiTeForm: 'シャワーを浴びて',
+      definition: 'to take a shower',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'つける',
+      verbType: 'ru',
+      teForm: 'つけて',
+      kanjiForm: 'つける',
+      kanjiTeForm: 'つけて',
+      definition: 'to turn on (~を)',
+      teConjugation: 'る → て'
+    },
+    {
+      verb: 'でんわする',
+      verbType: 'irregular',
+      teForm: 'でんわして',
+      kanjiForm: '電話する',
+      kanjiTeForm: '電話して',
+      definition: 'to call (~に)',
+      teConjugation: 'する → して'
+    },
+    {
+      verb: 'つれてくる',
+      verbType: 'irregular',
+      teForm: 'つれてきて',
+      kanjiForm: '連れてくる',
+      kanjiTeForm: '連れてきて',
+      definition: 'to bring (a person) (~を)',
+      teConjugation: 'くる → きて'
+    },
+    {
+      verb: 'もってくる',
+      verbType: 'irregular',
+      teForm: 'もってきて',
+      kanjiForm: '持ってくる',
+      kanjiTeForm: '持ってきて',
+      definition: 'to bring (a thing) (~を)',
+      teConjugation: 'くる → きて'
+    },
   ]
 
   const drawVerb = () => {
@@ -246,7 +509,7 @@ function App() {
       drawVerb();
       document.getElementById('teInput').value = '';
     } else {
-      document.getElementById('teAnswer').innerText = `I'm sorry that isn't quite right, try again!\n\n${verbType}-type verb`;
+      document.getElementById('teAnswer').innerText = `I'm sorry that isn't quite right, try again!\n\nHint: ${verb} is a ${verbType}-type verb`;
     }
   }
 
